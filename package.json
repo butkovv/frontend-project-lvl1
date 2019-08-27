@@ -4,12 +4,17 @@
   "description": "My 1st Hexlet project",
   "main": "index.js",
   "scripts": {
-    "test": "git status"
+    "test": "git status",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/butkovv/frontend-project-lvl1.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "hexlet",
     "javascript",
@@ -23,7 +28,7 @@
   },
   "homepage": "https://github.com/butkovv/frontend-project-lvl1#readme",
   "bin": {
-    "brain-games": "src/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
