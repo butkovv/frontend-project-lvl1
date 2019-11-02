@@ -1,6 +1,7 @@
 import readlineSync from './index';
 import brainEven from './bin/games/evenlib';
 import brainCalc from './bin/games/calclib';
+import brainGCD from './bin/games/gcdlib';
 
 const brainGame = () => {
   let game;
@@ -9,7 +10,7 @@ const brainGame = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('Choose your game.');
-  const gameID = readlineSync.question('Enter 1 to launch brain-even or 2 to launch brain-calc. Type 0 to quit. ');
+  const gameID = readlineSync.question('Enter 1 to launch brain-even, 2 to launch brain-calc, 3 to launch brain-gcd. Type 0 to quit. ');
 
   switch (gameID) {
     case '1':
@@ -18,15 +19,25 @@ const brainGame = () => {
       break;
     case '2':
       game = brainCalc;
+      console.log('What is the result of the expression?');
+      break;
+    case '3':
+      game = brainGCD;
+      console.log('Find the greatest common divisor of given numbers.');
       break;
     default:
       break;
   }
   while (count < 3) {
-    if (game() === true) {
+    const correctAnswer = String(game());
+    const answer = readlineSync.question('Your answer: ');
+    if (correctAnswer === answer) {
       console.log('Correct!');
       count += 1;
-    } else return console.log(`Let's try again, ${userName}!`);
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      return console.log(`Let's try again, ${userName}!`);
+    }
   }
   return console.log(`Congratulations, ${userName}!`);
 };

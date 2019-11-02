@@ -1,5 +1,3 @@
-import readlineSync from '../../index';
-
 const gameRound = () => {
   const a = Math.round(Math.random() * 100);
   const b = Math.round(Math.random() * 100);
@@ -21,12 +19,7 @@ const gameRound = () => {
     default:
       break;
   }
-  const answer = readlineSync.question('Your answer: ');
-  if (Number(answer) === result) {
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
-  return false;
+  return result;
 };
 
 export default gameRound;
