@@ -3,6 +3,7 @@ import brainEven from './bin/games/evenlib';
 import brainCalc from './bin/games/calclib';
 import brainGCD from './bin/games/gcdlib';
 import brainProgression from './bin/games/progressionlib';
+import brainPrime from './bin/games/primelib';
 
 const brainGame = () => {
   let game;
@@ -11,7 +12,7 @@ const brainGame = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('Choose your game.');
-  const gameID = readlineSync.question('Enter 1 to launch brain-even, 2 to launch brain-calc, 3 to launch brain-gcd, 4 to launch brain-progression. Type 0 to quit. ');
+  const gameID = readlineSync.question('Enter 1 to launch brain-even, 2 to launch brain-calc, 3 to launch brain-gcd, 4 to launch brain-progression, 5 to launch brain-prime. Type 0 to quit. ');
 
   switch (gameID) {
     case '1':
@@ -29,6 +30,10 @@ const brainGame = () => {
     case '4':
       game = brainProgression;
       console.log('What number is missing in the progression?');
+      break;
+    case '5':
+      game = brainPrime;
+      console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
       break;
     default:
       break;
