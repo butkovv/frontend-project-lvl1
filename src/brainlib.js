@@ -2,6 +2,7 @@ import readlineSync from './index';
 import brainEven from './bin/games/evenlib';
 import brainCalc from './bin/games/calclib';
 import brainGCD from './bin/games/gcdlib';
+import brainProgression from './bin/games/progressionlib';
 
 const brainGame = () => {
   let game;
@@ -10,7 +11,7 @@ const brainGame = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('Choose your game.');
-  const gameID = readlineSync.question('Enter 1 to launch brain-even, 2 to launch brain-calc, 3 to launch brain-gcd. Type 0 to quit. ');
+  const gameID = readlineSync.question('Enter 1 to launch brain-even, 2 to launch brain-calc, 3 to launch brain-gcd, 4 to launch brain-progression. Type 0 to quit. ');
 
   switch (gameID) {
     case '1':
@@ -24,6 +25,10 @@ const brainGame = () => {
     case '3':
       game = brainGCD;
       console.log('Find the greatest common divisor of given numbers.');
+      break;
+    case '4':
+      game = brainProgression;
+      console.log('What number is missing in the progression?');
       break;
     default:
       break;
