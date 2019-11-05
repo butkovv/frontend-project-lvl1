@@ -27,8 +27,7 @@
   },
   "homepage": "https://github.com/butkovv/frontend-project-lvl1#readme",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
