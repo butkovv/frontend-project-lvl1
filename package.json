@@ -1,6 +1,6 @@
 {
   "name": "brain-games-butko",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "My 1st Hexlet project",
   "main": "index.js",
   "scripts": {

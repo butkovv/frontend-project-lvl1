@@ -12,10 +12,10 @@ const gameRound = () => {
     } else f += 1;
   }
   // Заполняем массив uniqueDivisors уникальными значениями из массива divisors
-  for (let i = 1; i < divisors.length; i += 1) {
+  for (let i = 0; i < divisors.length; i += 1) {
     if (divisors[i] !== divisors[i - 1]) uniqueDivisors.push(divisors[i]);
   }
-  return uniqueDivisors.length === 0 ? 'yes' : 'no';
+  return uniqueDivisors.length === 1 ? 'yes' : 'no';
 };
 
 export default gameRound;
