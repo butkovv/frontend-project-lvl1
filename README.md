@@ -2,14 +2,14 @@
 # frontend-project-lvl1
 My first project for Hexlet.io<br>
 Installation:<br>
-[![asciicast](https://asciinema.org/a/279388.svg)](https://asciinema.org/a/279388)
+[![asciicast](https://asciinema.org/a/279388.svg)](https://asciinema.org/a/279388) <br>
 brain-even game:<br>
-[![asciicast](https://asciinema.org/a/279391.svg)](https://asciinema.org/a/279391)
+[![asciicast](https://asciinema.org/a/279391.svg)](https://asciinema.org/a/279391) <br>
 brain-calc game:<br>
-[![asciicast](https://asciinema.org/a/279392.svg)](https://asciinema.org/a/279392)
+[![asciicast](https://asciinema.org/a/279392.svg)](https://asciinema.org/a/279392) <br>
 brain-gcd game:<br>
-[![asciicast](https://asciinema.org/a/279395.svg)](https://asciinema.org/a/279395)
+[![asciicast](https://asciinema.org/a/279395.svg)](https://asciinema.org/a/279395) <br>
 brain-progression game:<br>
-[![asciicast](https://asciinema.org/a/279396.svg)](https://asciinema.org/a/279396)
+[![asciicast](https://asciinema.org/a/279396.svg)](https://asciinema.org/a/279396) <br>
 brain-prime game:<br>
-[![asciicast](https://asciinema.org/a/279405.svg)](https://asciinema.org/a/279405)
+[![asciicast](https://asciinema.org/a/279405.svg)](https://asciinema.org/a/279405) <br>
