@@ -1,9 +1,9 @@
 import readlineSync from './index';
-import brainEven from './bin/games/evenlib';
-import brainCalc from './bin/games/calclib';
-import brainGCD from './bin/games/gcdlib';
-import brainProgression from './bin/games/progressionlib';
-import brainPrime from './bin/games/primelib';
+import brainEven from './games/evenlib';
+import brainCalc from './games/calclib';
+import brainGCD from './games/gcdlib';
+import brainProgression from './games/progressionlib';
+import brainPrime from './games/primelib';
 
 const brainGame = () => {
   let game;
