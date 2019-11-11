@@ -1,9 +1,12 @@
+import { makeRandom } from '../index';
+
 const gameRound = () => {
-  let n = Math.round(Math.random() * 10000);
+  const upperLimit = 10000; // Задаем макимальное значение генерируемого числа
+  let n = makeRandom(upperLimit); // Генерируем случайное число в заданных пределах
   const divisors = [];
   const uniqueDivisors = [];
   let f = 2;
-  console.log(`Question:${n}`);
+  console.log(`Question: ${n}`);
   // Реализуем алгоритм поиска делителей числа n с добавлением их в массив divisors
   while (n > 1) {
     if (n % f === 0) {

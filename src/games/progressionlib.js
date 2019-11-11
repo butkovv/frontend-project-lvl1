@@ -1,11 +1,13 @@
+import { makeRandom } from '../index';
+
 const gameRound = () => {
   // Исходное значение
-  let value = Math.round(Math.random() * 100);
+  let value = makeRandom();
   // Шаг прогрессии
-  const increment = Math.round(Math.random() * 100);
+  const increment = makeRandom();
   const progressionLength = 10;
   // Позиция, которая будет пропущена
-  const missingPosition = Math.floor(Math.random() * progressionLength) + 1;
+  const missingPosition = makeRandom(progressionLength);
   let result;
   let output = '';
   // Цикл для записи прогрессии в виде строки

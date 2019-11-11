@@ -1,9 +1,13 @@
+import { makeRandom } from '../index';
+
 const gameRound = () => {
-  const a = Math.round(Math.random() * 100);
-  const b = Math.round(Math.random() * 100);
+  const a = makeRandom();
+  const b = makeRandom();
   let result;
   // Генерируем целое число в диапазоне [1; 3] для выбора одного из трех операторов
-  const operator = Math.floor(Math.random() * 3) + 1;
+  const min = 1;
+  const max = 3;
+  const operator = makeRandom(max, min);
   switch (operator) {
     case 1:
       result = a + b;

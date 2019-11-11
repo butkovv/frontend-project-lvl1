@@ -1,3 +1,4 @@
 import readlineSync from 'readline-sync';
+import makeRandom from './randomizer';
 
-export default readlineSync;
+export { readlineSync, makeRandom };

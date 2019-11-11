@@ -1,6 +1,8 @@
+import { makeRandom } from '../index';
+
 const gameRound = () => {
-  const a = Math.round(Math.random() * 100);
-  const b = Math.round(Math.random() * 100);
+  const a = makeRandom();
+  const b = makeRandom();
   console.log(`Question: ${a} ${b}`);
   // Находим число, делящее a и b без остатка.
   // Перебираем значения от наименьшего из a и b до 1.

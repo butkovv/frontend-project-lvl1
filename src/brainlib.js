@@ -1,4 +1,4 @@
-import readlineSync from './index';
+import { readlineSync } from './index';
 import brainEven from './games/evenlib';
 import brainCalc from './games/calclib';
 import brainGCD from './games/gcdlib';
