@@ -3,6 +3,8 @@ import {
   displayIntro, displayQuestion, checkAnswer, displayEnding,
 } from '../brainlib';
 
+const description = 'What number is missing in the progression?';
+
 const gameRound = () => {
   // Исходное значение
   let value = makeRandom();
@@ -28,8 +30,6 @@ const gameRound = () => {
 };
 
 const gameProgression = () => {
-  const description = 'What number is missing in the progression?';
-
   displayIntro(description);
 
   gameRound();

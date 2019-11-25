@@ -3,6 +3,8 @@ import {
   displayIntro, displayQuestion, checkAnswer, displayEnding,
 } from '../brainlib';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
 const gameRound = () => {
   const a = makeRandom();
   const b = makeRandom();
@@ -18,8 +20,6 @@ const gameRound = () => {
 };
 
 const gameGCD = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-
   displayIntro(description);
 
   gameRound();

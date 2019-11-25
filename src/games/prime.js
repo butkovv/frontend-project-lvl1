@@ -3,6 +3,8 @@ import {
   displayIntro, displayQuestion, checkAnswer, displayEnding,
 } from '../brainlib';
 
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const gameRound = () => {
   const upperLimit = 10000; // Задаем максимальное значение генерируемого числа
   let n = makeRandom(upperLimit); // Генерируем случайное число в заданных пределах
@@ -30,8 +32,6 @@ const gameRound = () => {
 };
 
 const gamePrime = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
   displayIntro(description);
 
   gameRound();

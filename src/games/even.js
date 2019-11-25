@@ -3,9 +3,9 @@ import {
   displayIntro, displayQuestion, checkAnswer, displayEnding,
 } from '../brainlib';
 
-const gameEven = () => {
-  const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+const gameEven = () => {
   const gameRound = () => {
     const number = makeRandom();
     const remainder = number % 2;

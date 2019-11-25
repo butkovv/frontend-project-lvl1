@@ -3,6 +3,8 @@ import {
   displayIntro, displayQuestion, checkAnswer, displayEnding,
 } from '../brainlib';
 
+const description = 'What is the result of the expression?';
+
 const gameRound = () => {
   const a = makeRandom();
   const b = makeRandom();
@@ -35,8 +37,6 @@ const gameRound = () => {
 };
 
 const gameCalc = () => {
-  const description = 'What is the result of the expression?';
-
   displayIntro(description);
 
   gameRound();
