@@ -5,29 +5,33 @@ import {
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const gameRound = () => {
-  const upperLimit = 10000;
-  let number = makeRandom(upperLimit);
+const primeCheck = (num) => {
   const divisors = [];
   const uniqueDivisors = [];
-  let div = 2;
+  let divisor = 2;
+  let division = num;
 
-  displayQuestion(number);
-
-  while (number > 1) {
-    if (number % div === 0) {
-      divisors.push(div);
-      number /= div;
-    } else div += 1;
+  while (division > 1) {
+    if (division % divisor === 0) {
+      divisors.push(divisor);
+      division /= divisor;
+    } else divisor += 1;
   }
 
   for (let i = 0; i < divisors.length; i += 1) {
     if (divisors[i] !== divisors[i - 1]) uniqueDivisors.push(divisors[i]);
   }
 
-  const isPrime = uniqueDivisors.length === 1 ? 'yes' : 'no';
+  return uniqueDivisors.length === 1 ? 'yes' : 'no';
+};
 
-  if (checkAnswer(isPrime) === true) gameRound();
+const gameRound = () => {
+  const upperLimit = 10000;
+  const number = makeRandom(upperLimit);
+
+  displayQuestion(number);
+
+  if (checkAnswer(primeCheck(number)) === true) gameRound();
 };
 
 const gamePrime = () => {
