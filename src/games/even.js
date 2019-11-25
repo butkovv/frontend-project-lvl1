@@ -5,15 +5,18 @@ import {
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEven = () => {
-  const gameRound = () => {
-    const number = makeRandom();
-    const remainder = number % 2;
-    displayQuestion(number);
-    const result = remainder === 0 ? 'yes' : 'no';
-    if (checkAnswer(result) === true) gameRound();
-  };
+const evenCheck = (num) => {
+  const remainder = num % 2;
+  return remainder === 0 ? 'yes' : 'no';
+};
 
+const gameRound = () => {
+  const number = makeRandom();
+  displayQuestion(number);
+  if (checkAnswer(evenCheck(number)) === true) gameRound();
+};
+
+const gameEven = () => {
   displayIntro(description);
 
   gameRound();
