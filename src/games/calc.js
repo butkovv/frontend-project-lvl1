@@ -10,25 +10,25 @@ const gameRound = () => {
   const b = makeRandom();
   let result;
   let question = '';
-  const min = 1;
-  const max = 3;
-  const operator = makeRandom(max, min);
-  switch (operator) {
-    case 1:
-      result = a + b;
-      question = `${a} + ${b}`;
-      break;
-    case 2:
-      result = a - b;
-      question = `${a} - ${b}`;
-      break;
-    case 3:
-      result = a * b;
-      question = `${a} * ${b}`;
-      break;
-    default:
-      break;
-  }
+
+  const sum = () => {
+    result = a + b;
+    question = `${a} + ${b}`;
+  };
+
+  const dif = () => {
+    result = a - b;
+    question = `${a} - ${b}`;
+  };
+
+  const mult = () => {
+    result = a * b;
+    question = `${a} * ${b}`;
+  };
+
+  const operations = [sum, dif, mult];
+  const operator = makeRandom(operations.length - 1, 0);
+  operations[operator]();
 
   displayQuestion(question);
 
