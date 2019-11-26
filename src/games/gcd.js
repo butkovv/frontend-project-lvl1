@@ -1,6 +1,6 @@
 import { makeRandom } from '../index';
 import {
-  displayIntro, displayQuestion, checkAnswer, displayEnding,
+  displayQuestion, checkAnswer, runGame,
 } from '../brainlib';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -20,11 +20,7 @@ const gameRound = () => {
 };
 
 const gameGCD = () => {
-  displayIntro(description);
-
-  gameRound();
-
-  displayEnding();
+  runGame(description, gameRound);
 };
 
 export default gameGCD;

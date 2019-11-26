@@ -1,6 +1,6 @@
 import { makeRandom } from '../index';
 import {
-  displayIntro, displayQuestion, checkAnswer, displayEnding,
+  displayQuestion, checkAnswer, runGame,
 } from '../brainlib';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -35,11 +35,7 @@ const gameRound = () => {
 };
 
 const gamePrime = () => {
-  displayIntro(description);
-
-  gameRound();
-
-  displayEnding();
+  runGame(description, gameRound);
 };
 
 export default gamePrime;

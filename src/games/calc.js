@@ -1,6 +1,6 @@
 import { makeRandom } from '../index';
 import {
-  displayIntro, displayQuestion, checkAnswer, displayEnding,
+  displayQuestion, checkAnswer, runGame,
 } from '../brainlib';
 
 const description = 'What is the result of the expression?';
@@ -10,7 +10,6 @@ const gameRound = () => {
   const b = makeRandom();
   let result;
   let question = '';
-  // Генерируем целое число в диапазоне [1; 3] для выбора одного из трех операторов
   const min = 1;
   const max = 3;
   const operator = makeRandom(max, min);
@@ -37,11 +36,7 @@ const gameRound = () => {
 };
 
 const gameCalc = () => {
-  displayIntro(description);
-
-  gameRound();
-
-  displayEnding();
+  runGame(description, gameRound);
 };
 
 export default gameCalc;

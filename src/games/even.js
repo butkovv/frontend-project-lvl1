@@ -1,6 +1,6 @@
 import { makeRandom } from '../index';
 import {
-  displayIntro, displayQuestion, checkAnswer, displayEnding,
+  displayQuestion, checkAnswer, runGame,
 } from '../brainlib';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -17,11 +17,7 @@ const gameRound = () => {
 };
 
 const gameEven = () => {
-  displayIntro(description);
-
-  gameRound();
-
-  displayEnding();
+  runGame(description, gameRound);
 };
 
 export default gameEven;
