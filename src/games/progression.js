@@ -4,11 +4,11 @@ import {
 } from '../brainlib';
 
 const description = 'What number is missing in the progression?';
+const progressionLength = 10;
 
 const gameRound = () => {
   let value = makeRandom();
   const increment = makeRandom();
-  const progressionLength = 10;
   const missingPosition = makeRandom(progressionLength);
   let answer;
   let output = '';
