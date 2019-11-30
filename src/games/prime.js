@@ -22,16 +22,17 @@ const primeCheck = (num) => {
     if (divisors[i] !== divisors[i - 1]) uniqueDivisors.push(divisors[i]);
   }
 
-  return uniqueDivisors.length === 1 ? 'yes' : 'no';
+  return uniqueDivisors.length === 1;
 };
 
 const gameRound = () => {
   const upperLimit = 10000;
-  const number = makeRandom(upperLimit);
+  const question = makeRandom(upperLimit);
+  const answer = primeCheck(question) ? 'yes' : 'no';
 
-  displayQuestion(number);
+  displayQuestion(question);
 
-  if (checkAnswer(primeCheck(number)) === true) gameRound();
+  if (checkAnswer(answer) === true) gameRound();
 };
 
 const gamePrime = () => {

@@ -11,12 +11,12 @@ const gameRound = () => {
   const question = `${a} ${b}`;
   // Находим число, делящее a и b без остатка.
   // Перебираем значения от наименьшего из a и b до 1.
-  let i = a > b ? b : a;
-  while (a % i !== 0 || b % i !== 0) i -= 1;
+  let gcd = a > b ? b : a;
+  while (a % gcd !== 0 || b % gcd !== 0) gcd -= 1;
 
   displayQuestion(question);
 
-  if (checkAnswer(String(i)) === true) gameRound();
+  if (checkAnswer(String(gcd)) === true) gameRound();
 };
 
 const gameGCD = () => {

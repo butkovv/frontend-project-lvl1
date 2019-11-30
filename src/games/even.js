@@ -11,9 +11,9 @@ const evenCheck = (num) => {
 };
 
 const gameRound = () => {
-  const number = makeRandom();
-  const answer = evenCheck(number) ? 'yes' : 'no';
-  displayQuestion(number);
+  const question = makeRandom();
+  const answer = evenCheck(question) ? 'yes' : 'no';
+  displayQuestion(question);
   if (checkAnswer(answer) === true) gameRound();
 };
 
