@@ -5,18 +5,20 @@ import {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gameRound = () => {
-  const a = makeRandom();
-  const b = makeRandom();
-  const question = `${a} ${b}`;
-  // Находим число, делящее a и b без остатка.
-  // Перебираем значения от наименьшего из a и b до 1.
+const findGCD = (a, b) => {
   let gcd = a > b ? b : a;
   while (a % gcd !== 0 || b % gcd !== 0) gcd -= 1;
+  return gcd;
+};
 
+const gameRound = () => {
+  const firstNum = makeRandom();
+  const secondNum = makeRandom();
+  const question = `${firstNum} ${secondNum}`;
+  const answer = findGCD(firstNum, secondNum);
   displayQuestion(question);
 
-  if (checkAnswer(String(gcd)) === true) gameRound();
+  if (checkAnswer(String(answer)) === true) gameRound();
 };
 
 const gameGCD = () => {
