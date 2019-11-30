@@ -8,31 +8,30 @@ const description = 'What is the result of the expression?';
 const gameRound = () => {
   const a = makeRandom();
   const b = makeRandom();
-  let result;
   let question = '';
 
-  const sum = () => {
-    result = a + b;
-    question = `${a} + ${b}`;
+  const sum = (x, y) => {
+    question = `${x} + ${y}`;
+    return x + y;
   };
 
-  const dif = () => {
-    result = a - b;
-    question = `${a} - ${b}`;
+  const dif = (x, y) => {
+    question = `${x} - ${y}`;
+    return x - y;
   };
 
-  const mult = () => {
-    result = a * b;
-    question = `${a} * ${b}`;
+  const mult = (x, y) => {
+    question = `${x} * ${y}`;
+    return x * y;
   };
 
   const operations = [sum, dif, mult];
   const operator = makeRandom(operations.length - 1, 0);
-  operations[operator]();
+  const answer = operations[operator](a, b);
 
   displayQuestion(question);
 
-  if (checkAnswer(String(result)) === true) gameRound();
+  if (checkAnswer(String(answer)) === true) gameRound();
 };
 
 const gameCalc = () => {
