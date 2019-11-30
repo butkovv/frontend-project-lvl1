@@ -17,11 +17,6 @@ export const checkAnswer = (correctAnswer) => {
   return false;
 };
 
-export const displayEnding = () => {
-  if (count === rounds) return console.log(`Congratulations, ${userName}!`);
-  return console.log(`Let's try again, ${userName}!`);
-};
-
 export const runGame = (description, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
@@ -29,6 +24,8 @@ export const runGame = (description, game) => {
   console.log(`Hello, ${userName}!`);
 
   game();
-  displayEnding();
+
+  if (count === rounds) console.log(`Congratulations, ${userName}!`);
+  else console.log(`Let's try again, ${userName}!`);
   return 0;
 };
