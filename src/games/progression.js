@@ -1,13 +1,11 @@
-import { makeRandom } from '../index';
-import {
-  displayQuestion, checkAnswer, runGame,
-} from '../brainlib';
+import { makeRandom, cons } from '../index';
+import runGame from '../brainlib';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 const placeHolder = '..';
 
-const gameRound = () => {
+const game = () => {
   let value = makeRandom();
   const increment = makeRandom();
   const missingPosition = makeRandom(progressionLength);
@@ -21,14 +19,12 @@ const gameRound = () => {
     } else question = `${question} ${value}`;
     value += increment;
   }
-
-  displayQuestion(question);
-
-  if (checkAnswer(String(answer)) === true) gameRound();
+  const gameData = cons(question, answer);
+  return gameData;
 };
 
 const gameProgression = () => {
-  runGame(description, gameRound);
+  runGame(description, game);
 };
 
 export default gameProgression;

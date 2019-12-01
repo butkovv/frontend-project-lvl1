@@ -1,7 +1,5 @@
-import { makeRandom } from '../index';
-import {
-  displayQuestion, checkAnswer, runGame,
-} from '../brainlib';
+import { makeRandom, cons } from '../index';
+import runGame from '../brainlib';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -25,18 +23,16 @@ const primeCheck = (num) => {
   return uniqueDivisors.length === 1;
 };
 
-const gameRound = () => {
+const game = () => {
   const upperLimit = 10000;
   const question = makeRandom(upperLimit);
   const answer = primeCheck(question) ? 'yes' : 'no';
-
-  displayQuestion(question);
-
-  if (checkAnswer(answer) === true) gameRound();
+  const gameData = cons(question, answer);
+  return gameData;
 };
 
 const gamePrime = () => {
-  runGame(description, gameRound);
+  runGame(description, game);
 };
 
 export default gamePrime;

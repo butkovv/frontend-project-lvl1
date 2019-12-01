@@ -1,7 +1,5 @@
-import { makeRandom } from '../index';
-import {
-  displayQuestion, checkAnswer, runGame,
-} from '../brainlib';
+import { makeRandom, cons } from '../index';
+import runGame from '../brainlib';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
@@ -11,18 +9,17 @@ const findGCD = (a, b) => {
   return gcd;
 };
 
-const gameRound = () => {
+const game = () => {
   const firstNum = makeRandom();
   const secondNum = makeRandom();
   const question = `${firstNum} ${secondNum}`;
   const answer = findGCD(firstNum, secondNum);
-  displayQuestion(question);
-
-  if (checkAnswer(String(answer)) === true) gameRound();
+  const gameData = cons(question, answer);
+  return gameData;
 };
 
 const gameGCD = () => {
-  runGame(description, gameRound);
+  runGame(description, game);
 };
 
 export default gameGCD;

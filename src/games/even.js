@@ -1,7 +1,5 @@
-import { makeRandom } from '../index';
-import {
-  displayQuestion, checkAnswer, runGame,
-} from '../brainlib';
+import { makeRandom, cons } from '../index';
+import runGame from '../brainlib';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -10,15 +8,15 @@ const evenCheck = (num) => {
   return remainder === 0;
 };
 
-const gameRound = () => {
+const game = () => {
   const question = makeRandom();
   const answer = evenCheck(question) ? 'yes' : 'no';
-  displayQuestion(question);
-  if (checkAnswer(answer) === true) gameRound();
+  const gameData = cons(question, answer);
+  return gameData;
 };
 
 const gameEven = () => {
-  runGame(description, gameRound);
+  runGame(description, game);
 };
 
 export default gameEven;
