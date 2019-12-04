@@ -8,12 +8,9 @@ const description = 'What is the result of the expression?';
 const generateGameData = () => {
   const a = makeRandom();
   const b = makeRandom();
-  const sumOperation = (x, y) => x + y;
-  const difOperation = (x, y) => x - y;
-  const multOperation = (x, y) => x * y;
-  const sum = cons(sumOperation, '+');
-  const dif = cons(difOperation, '-');
-  const mult = cons(multOperation, '*');
+  const sum = cons((x, y) => x + y, '+');
+  const dif = cons((x, y) => x - y, '-');
+  const mult = cons((x, y) => x * y, '*');
   const operations = [sum, dif, mult];
   const operation = makeRandom(operations.length - 1, 0);
   const question = `${a} ${cdr(operations[operation])} ${b}`;
