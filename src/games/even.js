@@ -8,7 +8,7 @@ const evenCheck = (num) => {
   return remainder === 0;
 };
 
-const game = () => {
+const generateGameData = () => {
   const question = makeRandom();
   const answer = evenCheck(question) ? 'yes' : 'no';
   const gameData = cons(question, answer);
@@ -16,7 +16,7 @@ const game = () => {
 };
 
 const gameEven = () => {
-  runGame(description, game);
+  runGame(description, generateGameData);
 };
 
 export default gameEven;

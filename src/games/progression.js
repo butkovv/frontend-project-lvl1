@@ -5,7 +5,7 @@ const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 const placeHolder = '..';
 
-const game = () => {
+const generateGameData = () => {
   let value = makeRandom();
   const increment = makeRandom();
   const missingPosition = makeRandom(progressionLength);
@@ -24,7 +24,7 @@ const game = () => {
 };
 
 const gameProgression = () => {
-  runGame(description, game);
+  runGame(description, generateGameData);
 };
 
 export default gameProgression;

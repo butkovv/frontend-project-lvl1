@@ -9,7 +9,7 @@ const findGCD = (a, b) => {
   return gcd;
 };
 
-const game = () => {
+const generateGameData = () => {
   const firstNum = makeRandom();
   const secondNum = makeRandom();
   const question = `${firstNum} ${secondNum}`;
@@ -19,7 +19,7 @@ const game = () => {
 };
 
 const gameGCD = () => {
-  runGame(description, game);
+  runGame(description, generateGameData);
 };
 
 export default gameGCD;

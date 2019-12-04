@@ -23,7 +23,7 @@ const primeCheck = (num) => {
   return uniqueDivisors.length === 1;
 };
 
-const game = () => {
+const generateGameData = () => {
   const upperLimit = 10000;
   const question = makeRandom(upperLimit);
   const answer = primeCheck(question) ? 'yes' : 'no';
@@ -32,7 +32,7 @@ const game = () => {
 };
 
 const gamePrime = () => {
-  runGame(description, game);
+  runGame(description, generateGameData);
 };
 
 export default gamePrime;
