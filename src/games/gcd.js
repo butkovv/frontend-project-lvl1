@@ -10,10 +10,10 @@ const findGCD = (a, b) => {
 };
 
 const generateGameData = () => {
-  const firstNum = makeRandom();
-  const secondNum = makeRandom();
-  const question = `${firstNum} ${secondNum}`;
-  const answer = findGCD(firstNum, secondNum);
+  const firstNumber = makeRandom();
+  const secondNumber = makeRandom();
+  const question = `${firstNumber} ${secondNumber}`;
+  const answer = findGCD(firstNumber, secondNumber);
   const gameData = cons(question, answer);
   return gameData;
 };

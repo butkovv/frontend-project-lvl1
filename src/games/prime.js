@@ -2,32 +2,22 @@ import { makeRandom, cons } from '../index';
 import runGame from '../brainlib';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const lowerLimit = 1;
+const upperLimit = 10000;
 
-const primeCheck = (num) => {
-  const divisors = [];
-  const uniqueDivisors = [];
+const isPrime = (num) => {
   let divisor = 2;
-  let division = num;
-
-  while (division > 1) {
-    if (division % divisor === 0) {
-      divisors.push(divisor);
-      division /= divisor;
-    } else divisor += 1;
+  while (divisor < num) {
+    if (num % divisor === 0) {
+      return false;
+    } divisor += 1;
   }
-
-  for (let i = 0; i < divisors.length; i += 1) {
-    if (divisors[i] !== divisors[i - 1]) uniqueDivisors.push(divisors[i]);
-  }
-
-  return uniqueDivisors.length === 1;
+  return true;
 };
 
 const generateGameData = () => {
-  const lowerLimit = 1;
-  const upperLimit = 10000;
   const question = makeRandom(upperLimit, lowerLimit);
-  const answer = primeCheck(question) ? 'yes' : 'no';
+  const answer = isPrime(question) ? 'yes' : 'no';
   const gameData = cons(question, answer);
   return gameData;
 };
