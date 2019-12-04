@@ -8,7 +8,7 @@ const placeHolder = '..';
 const generateGameData = () => {
   let value = makeRandom();
   const increment = makeRandom();
-  const missingPosition = makeRandom(progressionLength);
+  const missingPosition = makeRandom(1, progressionLength);
   let answer;
   let question = '';
 

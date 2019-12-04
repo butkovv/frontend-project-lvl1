@@ -12,7 +12,7 @@ const generateGameData = () => {
   const dif = cons((x, y) => x - y, '-');
   const mult = cons((x, y) => x * y, '*');
   const operations = [sum, dif, mult];
-  const operation = makeRandom(operations.length - 1, 0);
+  const operation = makeRandom(0, operations.length - 1);
   const question = `${a} ${cdr(operations[operation])} ${b}`;
   const answer = car(operations[operation])(a, b);
   const gameData = cons(question, answer);

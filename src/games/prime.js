@@ -24,8 +24,9 @@ const primeCheck = (num) => {
 };
 
 const generateGameData = () => {
+  const lowerLimit = 1;
   const upperLimit = 10000;
-  const question = makeRandom(upperLimit);
+  const question = makeRandom(upperLimit, lowerLimit);
   const answer = primeCheck(question) ? 'yes' : 'no';
   const gameData = cons(question, answer);
   return gameData;
