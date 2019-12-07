@@ -1,5 +1,5 @@
 import { makeRandom, cons } from '../index';
-import runGame from '../brainlib';
+import launchGame from '../brainlib';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const lowerLimit = 1;
@@ -23,7 +23,7 @@ const generateGameData = () => {
 };
 
 const gamePrime = () => {
-  runGame(description, generateGameData);
+  launchGame(description, generateGameData);
 };
 
 export default gamePrime;

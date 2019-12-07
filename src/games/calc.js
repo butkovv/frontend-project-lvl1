@@ -1,7 +1,7 @@
 import {
   makeRandom, cons, car, cdr,
 } from '../index';
-import runGame from '../brainlib';
+import launchGame from '../brainlib';
 
 const description = 'What is the result of the expression?';
 
@@ -20,7 +20,7 @@ const generateGameData = () => {
 };
 
 const gameCalc = () => {
-  runGame(description, generateGameData);
+  launchGame(description, generateGameData);
 };
 
 export default gameCalc;

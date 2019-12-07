@@ -1,5 +1,5 @@
 import { makeRandom, cons } from '../index';
-import runGame from '../brainlib';
+import launchGame from '../brainlib';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
@@ -23,7 +23,7 @@ const generateGameData = () => {
 };
 
 const gameProgression = () => {
-  runGame(description, generateGameData);
+  launchGame(description, generateGameData);
 };
 
 export default gameProgression;

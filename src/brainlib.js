@@ -1,35 +1,33 @@
 import { readlineSync, car, cdr } from './index';
 
-let userName = '';
-let count = 0;
-const rounds = 3;
+const roundsCount = 3;
 
 const checkAnswer = (correctAnswer) => {
   const answer = readlineSync.question('Your answer: ');
   if (correctAnswer === answer) {
     console.log('Correct!');
-    count += 1;
-    return !(count === rounds);
+    return true;
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
   return false;
 };
 
-const gameRound = (game) => {
+const runRound = (game) => {
   const gameInstance = game();
   console.log(`Question: ${car(gameInstance)}`);
-  if (checkAnswer(String(cdr(gameInstance))) === true) gameRound(game);
+  return checkAnswer(String(cdr(gameInstance)));
 };
 
-const runGame = (description, game) => {
+const launchGame = (description, game) => {
+  let winsCount = 0;
   console.log('Welcome to the Brain Games!');
   console.log(description);
-  userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  gameRound(game);
-  if (count === rounds) console.log(`Congratulations, ${userName}!`);
+  while (winsCount < roundsCount && runRound(game)) winsCount += 1;
+  if (winsCount === roundsCount) console.log(`Congratulations, ${userName}!`);
   else console.log(`Let's try again, ${userName}!`);
   return 0;
 };
 
-export default runGame;
+export default launchGame;
