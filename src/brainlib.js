@@ -1,4 +1,4 @@
-import { readlineSync, car, cdr } from './index';
+import { readlineSync, pairs } from './index';
 
 const roundsCount = 3;
 
@@ -11,8 +11,8 @@ const launchGame = (description, game) => {
 
   for (winsCount = 0; winsCount < roundsCount; winsCount += 1) {
     const gameInstance = game();
-    const question = car(gameInstance);
-    const correctAnswer = cdr(gameInstance);
+    const question = pairs.car(gameInstance);
+    const correctAnswer = pairs.cdr(gameInstance);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {

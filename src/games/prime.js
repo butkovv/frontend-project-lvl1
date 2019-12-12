@@ -1,4 +1,4 @@
-import { makeRandom, cons } from '../index';
+import { makeRandom, pairs } from '../index';
 import launchGame from '../brainlib';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -18,7 +18,7 @@ const isPrime = (num) => {
 const generateGameData = () => {
   const question = makeRandom(upperLimit, lowerLimit);
   const answer = isPrime(question) ? 'yes' : 'no';
-  const gameData = cons(question, answer);
+  const gameData = pairs.cons(question, answer);
   return gameData;
 };
 

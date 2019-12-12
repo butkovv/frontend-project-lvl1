@@ -1,4 +1,4 @@
-import { makeRandom, cons } from '../index';
+import { makeRandom, pairs } from '../index';
 import launchGame from '../brainlib';
 
 const description = 'What number is missing in the progression?';
@@ -17,7 +17,7 @@ const generateGameData = () => {
   }
   question = question.trim();
   const answer = start + diff * missingElementPosition;
-  const gameData = cons(question, answer);
+  const gameData = pairs.cons(question, answer);
   return gameData;
 };
 

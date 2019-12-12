@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import { cons, car, cdr } from '@hexlet/pairs';
+import * as pairs from '@hexlet/pairs';
 import makeRandom from './randomizer';
 
 export {
-  readlineSync, makeRandom, cons, car, cdr,
+  readlineSync, pairs, makeRandom,
 };
