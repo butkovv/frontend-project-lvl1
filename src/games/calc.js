@@ -9,9 +9,11 @@ const operations = [cons((x, y) => x + y, '+'), cons((x, y) => x - y, '-'), cons
 const generateGameData = () => {
   const a = makeRandom();
   const b = makeRandom();
-  const operation = makeRandom(0, operations.length - 1);
-  const question = `${a} ${cdr(operations[operation])} ${b}`;
-  const answer = car(operations[operation])(a, b);
+  const operationsIndex = makeRandom(0, operations.length - 1);
+  const operation = car(operations[operationsIndex]);
+  const operationSymbol = cdr(operations[operationsIndex]);
+  const question = `${a} ${operationSymbol} ${b}`;
+  const answer = operation(a, b);
   const gameData = cons(question, answer);
   return gameData;
 };
