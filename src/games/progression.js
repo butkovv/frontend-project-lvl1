@@ -9,15 +9,14 @@ const generateGameData = () => {
   const start = makeRandom();
   const diff = makeRandom();
   const missingElementPosition = makeRandom(1, progressionLength - 1);
-  let answer;
   let question = '';
 
   for (let i = 0; i <= progressionLength; i += 1) {
-    if (i === missingElementPosition) {
-      question = `${question} ${placeHolder}`;
-      answer = start + diff * i;
-    } else question = `${question} ${start + diff * i}`;
+    if (i === missingElementPosition) question = `${question} ${placeHolder}`;
+    else question = `${question} ${start + diff * i}`;
   }
+  question = question.trim();
+  const answer = start + diff * missingElementPosition;
   const gameData = cons(question, answer);
   return gameData;
 };
