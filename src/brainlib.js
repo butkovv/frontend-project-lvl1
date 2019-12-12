@@ -2,29 +2,27 @@ import { readlineSync, car, cdr } from './index';
 
 const roundsCount = 3;
 
-const checkAnswer = (correctAnswer) => {
-  const answer = readlineSync.question('Your answer: ');
-  if (correctAnswer === answer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  return false;
-};
-
-const runRound = (game) => {
-  const gameInstance = game();
-  console.log(`Question: ${car(gameInstance)}`);
-  return checkAnswer(String(cdr(gameInstance)));
-};
-
 const launchGame = (description, game) => {
-  let winsCount = 0;
+  let winsCount;
   console.log('Welcome to the Brain Games!');
   console.log(description);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  while (winsCount < roundsCount && runRound(game)) winsCount += 1;
+
+  for (winsCount = 0; winsCount < roundsCount; winsCount += 1) {
+    const gameInstance = game();
+    const question = car(gameInstance);
+    const correctAnswer = cdr(gameInstance);
+    console.log(`Question: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (correctAnswer === answer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      break;
+    }
+  }
+
   if (winsCount === roundsCount) console.log(`Congratulations, ${userName}!`);
   else console.log(`Let's try again, ${userName}!`);
   return 0;
