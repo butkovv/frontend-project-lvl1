@@ -12,7 +12,7 @@ const launchGame = (description, game) => {
   for (winsCount = 0; winsCount < roundsCount; winsCount += 1) {
     const gameInstance = game();
     const question = pairs.car(gameInstance);
-    const correctAnswer = pairs.cdr(gameInstance);
+    const correctAnswer = String(pairs.cdr(gameInstance));
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {
