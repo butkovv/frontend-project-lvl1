@@ -1,4 +1,5 @@
-import { makeRandom, pairs } from '../index';
+import { cons } from '@hexlet/pairs';
+import { makeRandom } from '../index';
 import launchGame from '../brainlib';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -14,7 +15,7 @@ const generateGameData = () => {
   const y = makeRandom();
   const question = `${x} ${y}`;
   const answer = findGCD(x, y);
-  return pairs.cons(question, answer);
+  return cons(question, answer);
 };
 
 export default () => launchGame(description, generateGameData);

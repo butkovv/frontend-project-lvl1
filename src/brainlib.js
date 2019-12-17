@@ -1,4 +1,5 @@
-import { readlineSync, pairs } from './index';
+import { car, cdr } from '@hexlet/pairs';
+import { readlineSync } from './index';
 
 const roundsCount = 3;
 
@@ -10,8 +11,8 @@ const launchGame = (description, game) => {
 
   for (let winsCount = 0; winsCount < roundsCount; winsCount += 1) {
     const gameInstance = game();
-    const question = pairs.car(gameInstance);
-    const correctAnswer = String(pairs.cdr(gameInstance));
+    const question = car(gameInstance);
+    const correctAnswer = String(cdr(gameInstance));
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {

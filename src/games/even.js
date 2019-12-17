@@ -1,4 +1,5 @@
-import { makeRandom, pairs } from '../index';
+import { cons } from '@hexlet/pairs';
+import { makeRandom } from '../index';
 import launchGame from '../brainlib';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -11,7 +12,7 @@ const isEven = (num) => {
 const generateGameData = () => {
   const question = makeRandom();
   const answer = isEven(question) ? 'yes' : 'no';
-  return pairs.cons(question, answer);
+  return cons(question, answer);
 };
 
 export default () => launchGame(description, generateGameData);

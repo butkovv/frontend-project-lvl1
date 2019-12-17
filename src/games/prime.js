@@ -1,4 +1,5 @@
-import { makeRandom, pairs } from '../index';
+import { cons } from '@hexlet/pairs';
+import { makeRandom } from '../index';
 import launchGame from '../brainlib';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -18,7 +19,7 @@ const isPrime = (num) => {
 const generateGameData = () => {
   const question = makeRandom(upperLimit, lowerLimit);
   const answer = isPrime(question) ? 'yes' : 'no';
-  return pairs.cons(question, answer);
+  return cons(question, answer);
 };
 
 export default () => launchGame(description, generateGameData);

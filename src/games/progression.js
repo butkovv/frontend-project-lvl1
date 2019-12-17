@@ -1,4 +1,5 @@
-import { makeRandom, pairs } from '../index';
+import { cons } from '@hexlet/pairs';
+import { makeRandom } from '../index';
 import launchGame from '../brainlib';
 
 const description = 'What number is missing in the progression?';
@@ -16,7 +17,7 @@ const generateGameData = () => {
     else question = `${question} ${start + diff * i}`;
   }
   const answer = start + diff * missingElementPosition;
-  return pairs.cons(question.trim(), answer);
+  return cons(question.trim(), answer);
 };
 
 export default () => launchGame(description, generateGameData);
