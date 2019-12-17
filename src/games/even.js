@@ -11,8 +11,7 @@ const isEven = (num) => {
 const generateGameData = () => {
   const question = makeRandom();
   const answer = isEven(question) ? 'yes' : 'no';
-  const gameData = pairs.cons(question, answer);
-  return gameData;
+  return pairs.cons(question, answer);
 };
 
 const gameEven = () => {

@@ -14,8 +14,7 @@ const generateGameData = () => {
   const y = makeRandom();
   const question = `${x} ${y}`;
   const answer = findGCD(x, y);
-  const gameData = pairs.cons(question, answer);
-  return gameData;
+  return pairs.cons(question, answer);
 };
 
 const gameGCD = () => {

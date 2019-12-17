@@ -17,8 +17,7 @@ const generateGameData = () => {
   }
   question = question.trim();
   const answer = start + diff * missingElementPosition;
-  const gameData = pairs.cons(question, answer);
-  return gameData;
+  return pairs.cons(question, answer);
 };
 
 const gameProgression = () => {

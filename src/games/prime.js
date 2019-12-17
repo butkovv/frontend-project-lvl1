@@ -18,8 +18,7 @@ const isPrime = (num) => {
 const generateGameData = () => {
   const question = makeRandom(upperLimit, lowerLimit);
   const answer = isPrime(question) ? 'yes' : 'no';
-  const gameData = pairs.cons(question, answer);
-  return gameData;
+  return pairs.cons(question, answer);
 };
 
 const gamePrime = () => {
