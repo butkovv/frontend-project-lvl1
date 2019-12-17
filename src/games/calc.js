@@ -17,8 +17,4 @@ const generateGameData = () => {
   return pairs.cons(question, answer);
 };
 
-const gameCalc = () => {
-  launchGame(description, generateGameData);
-};
-
-export default gameCalc;
+export default () => launchGame(description, generateGameData);

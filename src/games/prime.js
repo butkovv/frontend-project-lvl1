@@ -21,8 +21,4 @@ const generateGameData = () => {
   return pairs.cons(question, answer);
 };
 
-const gamePrime = () => {
-  launchGame(description, generateGameData);
-};
-
-export default gamePrime;
+export default () => launchGame(description, generateGameData);

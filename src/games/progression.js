@@ -20,8 +20,4 @@ const generateGameData = () => {
   return pairs.cons(question, answer);
 };
 
-const gameProgression = () => {
-  launchGame(description, generateGameData);
-};
-
-export default gameProgression;
+export default () => launchGame(description, generateGameData);
