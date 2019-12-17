@@ -15,9 +15,8 @@ const generateGameData = () => {
     if (i === missingElementPosition) question = `${question} ${placeHolder}`;
     else question = `${question} ${start + diff * i}`;
   }
-  question = question.trim();
   const answer = start + diff * missingElementPosition;
-  return pairs.cons(question, answer);
+  return pairs.cons(question.trim(), answer);
 };
 
 export default () => launchGame(description, generateGameData);
