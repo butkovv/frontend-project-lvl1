@@ -1,6 +1,6 @@
 import { cons, car, cdr } from '@hexlet/pairs';
 import { makeRandom } from '../index';
-import launchGame from '../brainlib';
+import launchGame from '../engine';
 
 const description = 'What is the result of the expression?';
 const operations = [

@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import { makeRandom } from '../index';
-import launchGame from '../brainlib';
+import launchGame from '../engine';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 

@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import { makeRandom } from '../index';
-import launchGame from '../brainlib';
+import launchGame from '../engine';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const lowerLimit = 1;
@@ -8,6 +8,7 @@ const upperLimit = 10000;
 
 const isPrime = (num) => {
   let divisor = 2;
+  if (num < 2) return false;
   while (divisor < num) {
     if (num % divisor === 0) {
       return false;
