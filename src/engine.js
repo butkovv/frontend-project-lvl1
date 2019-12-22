@@ -12,18 +12,20 @@ const launchGame = (description, generateGameData) => {
   for (let winsCount = 0; winsCount < roundsCount; winsCount += 1) {
     const gameInstance = generateGameData();
     const question = car(gameInstance);
-    const correctAnswer = String(cdr(gameInstance));
+    const correctAnswer = cdr(gameInstance);
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-      return console.log(`Let's try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
+      return null;
     }
   }
 
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
+  return null;
 };
 
 export default launchGame;
