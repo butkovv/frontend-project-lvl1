@@ -15,7 +15,7 @@ const generateGameData = () => {
   const y = makeRandom();
   const question = `${x} ${y}`;
   const answer = findGCD(x, y);
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 export default () => launchGame(description, generateGameData);

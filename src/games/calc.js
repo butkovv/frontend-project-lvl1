@@ -17,7 +17,7 @@ const generateGameData = () => {
   const sign = cdr(operations[operationsIndex]);
   const question = `${a} ${sign} ${b}`;
   const answer = operation(a, b);
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 export default () => launchGame(description, generateGameData);
