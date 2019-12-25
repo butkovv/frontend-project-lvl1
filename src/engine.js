@@ -9,7 +9,7 @@ const launchGame = (description, generateGameData) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  for (let winsCount = 0; winsCount < roundsCount; winsCount += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     const gameInstance = generateGameData();
     const question = car(gameInstance);
     const correctAnswer = cdr(gameInstance);
@@ -20,12 +20,11 @@ const launchGame = (description, generateGameData) => {
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${userName}!`);
-      return null;
+      return;
     }
   }
 
   console.log(`Congratulations, ${userName}!`);
-  return null;
 };
 
 export default launchGame;
