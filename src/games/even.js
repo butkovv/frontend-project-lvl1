@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import { makeRandom } from '../index';
+import makeRandom from '..';
 import launchGame from '../engine';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

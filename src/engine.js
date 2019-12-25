@@ -1,5 +1,5 @@
 import { car, cdr } from '@hexlet/pairs';
-import { readlineSync } from './index';
+import readlineSync from 'readline-sync';
 
 const roundsCount = 3;
 

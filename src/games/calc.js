@@ -1,5 +1,5 @@
 import { cons, car, cdr } from '@hexlet/pairs';
-import { makeRandom } from '../index';
+import makeRandom from '..';
 import launchGame from '../engine';
 
 const description = 'What is the result of the expression?';
