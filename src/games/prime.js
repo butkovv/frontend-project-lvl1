@@ -9,7 +9,7 @@ const upperLimit = 10000;
 const isPrime = (num) => {
   let divisor = 2;
   if (num < 2) return false;
-  while (divisor < num) {
+  while (divisor < num / 2) {
     if (num % divisor === 0) {
       return false;
     } divisor += 1;
